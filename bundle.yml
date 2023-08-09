@@ -11,7 +11,7 @@ resources:
   pipelines:
     # Our DLT pipeline
     medium_metrics_pipeline:
-      name: "[${bundle.environment}] FE Medium Metrics Pipeline"
+      name: "[${bundle.environment}] FE Medium Metrics Pipeline_LPT"
       target: "medium_post_report_${bundle.environment}"
       libraries:
         - file:
@@ -25,7 +25,7 @@ resources:
   jobs:
     # A two-task Databricks Workflow - dlt + notebook report
     fe_medium_metrics:
-      name: "[${bundle.environment}] Metrics for FE Medium Posts"
+      name: "[${bundle.environment}] Metrics for FE Medium Posts_LPT"
       tasks:
         - task_key: dlt_medium_pipeline
           pipeline_task:
@@ -65,10 +65,10 @@ environments:
   production:
     workspace:
       #host: https://e2-demo-west.cloud.databricks.com/
-      host: https://e2-demo-field-eng.cloud.databricks.com/browse?o=1444828305810485
+      host: https://e2-demo-field-eng.cloud.databricks.com/
     resources:
       pipelines:
-        medium_metrics_pipeline_lpt:
+        medium_metrics_pipeline:
           permissions:
           - level: CAN_VIEW
             group_name: users
