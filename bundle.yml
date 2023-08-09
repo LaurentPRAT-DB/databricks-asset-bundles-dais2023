@@ -56,7 +56,7 @@ environments:
       host: https://e2-demo-field-eng.cloud.databricks.com/
     resources:
       pipelines:
-        medium_metrics_pipeline:
+        medium_metrics_pipeline_lpt:
           development: true
           permissions:
             - level: CAN_VIEW
@@ -65,10 +65,10 @@ environments:
   production:
     workspace:
       #host: https://e2-demo-west.cloud.databricks.com/
-      host: https://e2-demo-field-eng.cloud.databricks.com/
+      host: https://e2-demo-field-eng.cloud.databricks.com/browse?o=1444828305810485
     resources:
       pipelines:
-        medium_metrics_pipeline:
+        medium_metrics_pipeline_lpt:
           permissions:
           - level: CAN_VIEW
             group_name: users
